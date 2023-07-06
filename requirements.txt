@@ -2,3 +2,4 @@ Flask
 gunicorn 
 tensorflow
 pretty-midi
+keras
