@@ -7,9 +7,7 @@ from flask import Flask,render_template
 import pickle
 
 app=Flask(__name__)
-app_directory = os.path.dirname(os.path.abspath(__file__))
-model_path = os.path.join(app_directory, 'model.pkl')
-model = pickle.load(open(model_path, 'rb'))
+
 #model=pickle.load(open('model.pkl','rb'))
 encoder_model=pickle.load(open('encoder_model.pkl','rb'))
 decoder_model=pickle.load(open('decoder_model.pkl','rb'))
