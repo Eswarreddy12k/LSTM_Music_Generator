@@ -58,7 +58,7 @@ def preprocess_dataset(dataset_folder):
     
     return dataset
 
-dataset_folder = "C:/Users/eswar/Downloads/archive (3)/maestro-v3.0.0/2018"
+dataset_folder = "2018"
 dataset = preprocess_dataset(dataset_folder)
 
 
