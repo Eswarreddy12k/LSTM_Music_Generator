@@ -1,6 +1,7 @@
 import numpy as np
 import pretty_midi
 import os
+import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.utils import to_categorical
 from flask import Flask,render_template
@@ -11,7 +12,6 @@ app=Flask(__name__)
 #model=pickle.load(open('model.pkl','rb'))
 encoder_model=pickle.load(open('encoder_model.pkl','rb'))
 decoder_model=pickle.load(open('decoder_model.pkl','rb'))
-
 
 def generate_music_sequence(encoder_model, decoder_model, input_seq, output_vocab_size, max_output_length):
     states_value = encoder_model.predict(input_seq)
@@ -179,4 +179,5 @@ def generate_music():
     midi.write('static/generated_music.mid')
     return render_template('index.html')
 
-app.run()
+if __name__ == '__main__':
+    app.run()
