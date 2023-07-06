@@ -115,6 +115,10 @@ epochs = 10
 batch_size = 32
 model.fit([encoder_input_data, decoder_input_data], decoder_target_data, batch_size=batch_size, epochs=epochs)
 
+model.save('model.h5')
+encoder_model.save('encoder_model.h5')
+decoder_model.save('decoder_model.h5')
+
 pickle.dump(model,open('model.pkl','wb'))
 pickle.dump(encoder_model,open('encoder_model.pkl','wb'))
 pickle.dump(decoder_model,open('decoder_model.pkl','wb'))

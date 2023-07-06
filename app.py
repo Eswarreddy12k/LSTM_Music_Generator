@@ -10,8 +10,8 @@ import pickle
 app=Flask(__name__)
 
 #model=pickle.load(open('model.pkl','rb'))
-encoder_model=pickle.load(open('encoder_model.pkl','rb'))
-decoder_model=pickle.load(open('decoder_model.pkl','rb'))
+encoder_model=tf.keras.models.load_model('encoder_model.h5')
+decoder_model=tf.keras.models.load_model('decoder_model.h5')
 
 def generate_music_sequence(encoder_model, decoder_model, input_seq, output_vocab_size, max_output_length):
     states_value = encoder_model.predict(input_seq)
